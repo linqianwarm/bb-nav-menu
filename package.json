@@ -1,0 +1,25 @@
+{
+  "name": "nav-component",
+  "version": "1.0.0",
+  "description": "一个使用jQuery的导航组件demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linqianwarm/navComponent.git"
+  },
+  "keywords": [
+    "nav"
+  ],
+  "author": "linqian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linqianwarm/navComponent/issues"
+  },
+  "homepage": "https://github.com/linqianwarm/navComponent#readme",
+  "dependencies": {
+    "live-server": "^1.2.0"
+  }
+}
