@@ -95,7 +95,7 @@ Nav.prototype = {
 	  })
 
 	  window.addEventListener('hashchange', function() {
-	    var hashKey = getCurHash();
+	    var hashKey = _this.getCurHash();
 	    _this.renderSelected(hashKey);
 	  });
   }

@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style type="text/css">
+    nav {
+      float: left;
+    }
     .hide {
       display: none;
     }
@@ -26,6 +29,14 @@
 
   <script type="text/javascript" src="./lib/jquery-1.12.1.js"></script>
   <script type="text/javascript" src="./NavComponet.js"></script>
-  <script type="text/javascript" src="./index.js"></script>
+  <script type="text/javascript">
+    $.getJSON("./nav-data.json",function(data){
+      console.log(data);
+      new Nav({
+        container: 'menu',
+        data: data
+      })
+    })
+  </script>
 </body>
 </html>
