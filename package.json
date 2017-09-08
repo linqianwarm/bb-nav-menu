@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linqianwarm/navComponent.git"
+    "url": "git+https://github.com/linqianwarm/bb-nav-menu.git"
   },
   "keywords": [
     "navigation",
@@ -19,7 +19,7 @@
   "author": "linqian",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/linqianwarm/navComponent/issues"
+    "url": "https://github.com/linqianwarm/bb-nav-menu/issues"
   },
   "dependencies": {
     "babel-runtime": "6.26.0",
@@ -39,5 +39,5 @@
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0"
   },
-  "homepage": "https://github.com/linqianwarm/navComponent#readme"
+  "homepage": "https://github.com/linqianwarm/bb-nav-menu#readme"
 }
