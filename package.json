@@ -1,5 +1,5 @@
 {
-  "name": "navcomponent",
+  "name": "bb-nav-menu",
   "version": "1.0.0",
   "description": "navigation menu component for vue",
   "main": "index.js",
