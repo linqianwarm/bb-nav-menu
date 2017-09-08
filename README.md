@@ -11,32 +11,22 @@
 
   > 1. 导航默认全部收起；开放配置初始化默认选中项（TODO）
   > 2. 导航有两种显示状态，皆为竖直，分为折叠和展开两种形态,暂时只支持三层数据的结构。（多层自适应TODO）
-  > 3. 交互形式为：
-    >> 折叠: 第一层hover右侧打开第二层，第二层hover右侧打开第三层</br>
-    >> 展开：第一层click下侧打开第二层，第二层hover右侧展现第三层；</br>
-    >> 叶子节点实现点击触发事件 </br>
+  > 3. 交互形式为：</br>
+    折叠: 第一层hover右侧打开第二层，第二层hover右侧打开第三层</br>
+    展开：第一层click下侧打开第二层，第二层hover右侧展现第三层；</br>
+    叶子节点实现点击触发事件 </br>
   > 4. 组件不提供路由，但放出相应的响应事件给组件使用方，可自行做前端or服务端路由跳转
 
 ### 使用方式
 
+#### template模板使用
 ```template
   <bb-nav-menu :menuData="items" :defaultUrl="curUrl" :collapse="collapse" v-on:selectNode="response"></bb-nav-menu>
 ```
 
-### Menu Attribute
-|参数|说明|类型|可选值|默认值|
-|---|---|---|---|---|
-|menuData| 菜单数据，下面有示例 |Array| - | - |
-|defaultUrl|默认选中菜单项的URL|String| - | - |
-|collapse|是否水平折叠收起菜单|Boolean|-|false|
-
-### Menu Events
-|事件名称|说明|回调函数|
-|---|---|---|
-|selectNode| 选中菜单的叶子节点 |url:选中项上面的url参数|
-
+#### js使用
 ```JavaScript
-import BbNavMenu from 'bb-nav-menu';
+  import BbNavMenu from 'bb-nav-menu';
 
   export default {
     name: 'app',
@@ -98,3 +88,16 @@ import BbNavMenu from 'bb-nav-menu';
   };
 
 ```
+
+
+### Menu Attribute
+|参数|说明|类型|可选值|默认值|
+|---|---|---|---|---|
+|menuData| 菜单数据，下面有示例 |Array| - | - |
+|defaultUrl|默认选中菜单项的URL|String| - | - |
+|collapse|是否水平折叠收起菜单|Boolean|-|false|
+
+### Menu Events
+|事件名称|说明|回调函数|
+|---|---|---|
+|selectNode| 选中菜单的叶子节点 |url:选中项上面的url参数|
