@@ -1,0 +1,27 @@
+//=============  Menu-Mixins Start============= 
+.menu-icon(@menu-icon-color: @base-menu-font-color) {
+  width: @menu-icon-size;
+  height: @menu-icon-size;
+  color: @menu-icon-color;
+}
+
+.calc-colors(@base-menu-font-color) {
+
+  @menu-font-color-red: red(@base-menu-font-color);
+  @menu-font-color-green: green(@base-menu-font-color);
+  @menu-font-color-blue: blue(@base-menu-font-color);
+
+  @menu-item-font-color: rgba(@menu-font-color-red, @menu-font-color-green, @menu-font-color-blue, @base-menu-font-alpha);
+  @menu-item-icon-color: rgba(@menu-font-color-red, @menu-font-color-green, @menu-font-color-blue, @base-menu-icon-alpha);
+  @menu-item-selected-font-color: rgba(@menu-font-color-red, @menu-font-color-green, @menu-font-color-blue, @base-menu-font-alpha + 0.2);
+  @menu-item-selected-icon-color: rgba(@menu-font-color-red, @menu-font-color-green, @menu-font-color-blue, @base-menu-icon-alpha + 0.2);
+
+  @menu-submenu-list-icon-size: 4px;
+
+}
+
+.transition() {
+  transition: all .3s ease-in-out;
+}
+
+//=============  Menu-Mixins End============= 

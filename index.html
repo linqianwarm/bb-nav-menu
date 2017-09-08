@@ -1,42 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style type="text/css">
-    nav {
-      float: left;
-    }
-    .hide {
-      display: none;
-    }
-    .leaf-node:hover,
-    .menu-title:hover {
-      background: pink;
-      cursor: pointer;
-    }
-    .leaf-node.cur {
-      background: red;
-    }
-  </style>
-</head>
-<body>
-  
-  <nav id="menu">
-  </nav>
-
-  <script type="text/javascript" src="./lib/jquery-1.12.1.js"></script>
-  <script type="text/javascript" src="./NavComponet.js"></script>
-  <script type="text/javascript">
-    $.getJSON("./nav-data.json",function(data){
-      console.log(data);
-      new Nav({
-        container: 'menu',
-        data: data
-      })
-    })
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>VueMenu</title>
+    <link rel="stylesheet" href="http://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="app">
+    	<!-- <App></App> -->
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>

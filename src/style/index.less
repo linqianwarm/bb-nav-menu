@@ -1,0 +1,97 @@
+@import './variables';
+@import './mixin';
+@import './menu';
+@import './menu-folded';
+
+// Reset ========
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+// Layout ========
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+// 左侧导航菜单区 - 展开状态
+.sidebar {
+    position: relative;
+    width: @sidebar-width;
+    z-index: @base-zindex + 1;
+    overflow-x: visible;
+    .transition();
+
+    .logo {
+        height: @header-height;
+        background-color: lighten(@menu-item-bg-color, 10%);
+        line-height: @header-height;
+        text-align: center;
+    }
+
+
+    .menu-root {
+        position: relative;
+        background: #354059;
+        width: 100%;
+        overflow-x: visible;
+    }
+
+
+    &-toggle-btn {
+        float: right;
+        display: flex;
+        width: @header-height;
+        height: @header-height;
+        margin-right: -@header-height;
+        justify-content: center;
+        align-items: center;
+        background: #fafafc;
+        line-height: @header-height;
+        color: @menu-item-bg-color;
+        cursor: pointer;
+        
+        .lines {
+            .transition();
+            position: relative;
+            height: 13px;
+            width: @menu-icon-size;
+            background: repeating-linear-gradient(to bottom, @menu-item-selected-color 0px,  @menu-item-selected-color 2px,transparent 2px,  transparent 5px);
+
+        }
+
+        .lines:before {
+            display: inline-block;
+            position: absolute;
+            content: ' ';
+            top: 0px;
+            right: 0px;
+            width: 12px;
+            height: 13px;
+            background-color:  #dfe1e7 ;
+            background: repeating-linear-gradient(to bottom, #dfe1e7  0px,  #dfe1e7 2px,transparent 2px,  transparent 5px)
+        }
+    }
+
+}
+
+// 左侧导航菜单区 - 折叠状态
+.sidebar-folded {
+    width: @sidebar-folded-width;
+
+    .sidebar-toggle-btn {
+        .lines:before {
+            width: 0px;
+        }
+    }
+
+}

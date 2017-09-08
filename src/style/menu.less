@@ -1,0 +1,167 @@
+@import './variables';
+@import './mixin';
+
+
+//=============  Menu-Styles Start============= 
+.menu-root {
+
+    .calc-colors(@base-menu-font-color);
+
+    a {
+        & {
+            display: inline-block;
+            text-decoration: none;
+        }
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: @menu-item-font-color;
+        }
+    }
+
+    .menu-item {
+        .transition();
+        position: relative;
+        &:not(.menu-item-selected)>.menu-title:hover {
+            color: @menu-item-selected-font-color;
+            background-color: @menu-item-selected-bg-color;
+            box-shadow: inset 0px 1px 0px 0px @menu-item-bg-color;
+        }
+    } 
+
+    .menu-title {
+        .transition();
+        width: 100%;
+        display: block;
+        height:  @menu-item-height;
+        line-height: @menu-item-height;
+        padding-left: @menu-padding-left;
+        padding-right: @menu-padding-right;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .menu-item-selected {
+        // 选中的节点
+        &>.menu-title {
+            color: @menu-item-selected-font-color;
+            background-color: @menu-item-selected-bg-color;
+            box-shadow: inset @menu-item-selected-border-width 0px 0px 0px @menu-item-selected-color, inset 0px 1px 0px 0px @menu-item-bg-color;
+        }
+
+        &.menu-item-unfold-hover>.menu-title {
+            box-shadow: none;
+        }
+        .menu-icon-title-alt,
+        .menu-icon-angle {
+            color: @menu-item-selected-icon-color;
+        }
+    }
+
+    .menu-submenu {
+
+        position: relative;
+
+        &-hidden {
+            display: none;
+        }
+
+        .menu-item {
+            background-color: @menu-submenu-item-bg-color;
+            &:not(.menu-item-selected)>.menu-title:hover {
+                box-shadow: inset 1px 0px 0px 0px @menu-submenu-item-bg-color;
+            }
+        } 
+
+        .menu-title {
+            padding-left: @menu-submenu-padding-left + @menu-icon-margin-right + @menu-submenu-list-icon-size;
+        }
+
+    }
+
+    .menu-submenu-inline {
+        // 模拟list-style: circle-solid
+        & > .menu-item:before {
+            position: absolute;
+            display: block;
+            content: ' ';
+            left: @menu-submenu-padding-left;
+            top: 50%;
+            margin-top: -@menu-submenu-list-icon-size/2;
+            width: @menu-submenu-list-icon-size;
+            height: @menu-submenu-list-icon-size;
+            border-radius: @menu-submenu-list-icon-size/2;
+            background-color: @base-menu-font-color;
+        }
+
+    }
+
+     // 三级子菜单
+    .menu-submenu .menu-item .menu-submenu-vertical {
+        position: absolute;
+        left: @sidebar-width;
+        background-color: @menu-submenu-item-bg-color;
+        display: block;
+        z-index: @base-zindex + 2;
+
+        .menu-item {
+            box-shadow: inset 1px 0px 0px  0px @menu-item-bg-color;
+        }
+
+    }
+    .menu-appear-up {
+        &> .menu-submenu-l2 {
+            bottom: 0 + @menu-item-height;
+        }
+        &> .menu-submenu.menu-submenu-l3 {
+            bottom: 0;
+        }
+    }
+
+    .menu-appear-down {
+        &> .menu-submenu-l2,
+        &> .menu-submenu-l3 {
+            top: 0;
+        }
+    }
+
+    .menu-submenu-vertical {
+
+        @menu-submenu-item-bg-color-red: red(@menu-submenu-item-bg-color);
+        @menu-submenu-item-bg-color-green: green(@menu-submenu-item-bg-color);
+        @menu-submenu-item-bg-color-blue: blue(@menu-submenu-item-bg-color);
+
+        @menu-submenu-vertical-item-bg-color: rgba(@menu-submenu-item-bg-color-red, @menu-submenu-item-bg-color-green, @menu-submenu-item-bg-color-blue, @menu-submenu-vertical-item-bg-color-alpha);
+
+        width: @menu-submenu-vertical-width;
+        overflow: visible;
+        display: none;
+
+        .menu-item {
+            background-color: @menu-submenu-vertical-item-bg-color;
+        }
+
+        .menu-title {
+            padding-left: @menu-submenu-padding-left - @base-padding;
+            text-align: left;
+            font-size: 12px;
+        }
+    }
+
+    // icon ===== 
+    [class|=menu-icon] {
+        .menu-icon( @menu-item-icon-color);        
+    }
+
+    .menu-icon-title-alt {
+        margin-right: @menu-icon-margin-right;
+    }
+
+    .menu-icon-angle {
+        float: right;
+        line-height: @menu-item-height;
+    }
+}
+//=============  Menu-Styles End============= 

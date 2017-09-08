@@ -1,0 +1,101 @@
+@import './variables';
+@import './mixin';
+
+.sidebar-folded .menu-root {
+
+    .calc-colors(@base-menu-font-color);
+
+    .menu-submenu {
+        display: none;
+        & > .menu-item:not(.menu-item-selected)>.menu-title:hover {
+            box-shadow: inset 0px 1px 0px 0px @menu-item-bg-color;
+        }
+    }
+    .menu-submenu-vertical {
+    	.menu-item {
+    	    box-shadow: inset 1px 0px 0px  0px lighten(@menu-submenu-item-bg-color, 10%);
+    	}
+    }
+
+
+    .menu-item {
+
+        .transition(); // 一级li宽度调整
+        &.menu-item-l1 {
+            width: @sidebar-folded-width;
+        }
+
+        .menu-submenu-vertical {
+            width: @menu-submenu-vertical-width;
+        } // 一级title特殊处理
+        .menu-title-text.menu-title-l1 {
+            width: @menu-submenu-vertical-width;
+            display: none;
+        }
+
+        .menu-title-text.menu-title-l2 {
+            margin-left: @menu-icon-margin-right;
+        }
+
+        &.menu-item-hover {
+
+            &:not(.menu-item-selected)>.menu-title:hover {
+                box-shadow: inset 0px 1px 0px 0px @menu-item-bg-color;
+            }
+            &.menu-item-selected > .menu-title-no-children {
+                box-shadow: inset 3px 0px 0px 0px #709d63, inset 0px 1px 0px 0px #2b3447;
+            }
+            &>.menu-title {
+                color: rgba(255, 255, 255, 0.8);
+                background-color: #1c212d;
+                box-shadow: inset 0px 1px 0px 0px @menu-item-bg-color;
+            }
+            .menu-title-l1 {
+                padding-left: @base-padding;
+                display: inline-block;
+                width: @menu-submenu-vertical-width;
+                position: absolute;
+                left: @sidebar-folded-width;
+                top: 0;
+                background-color: @menu-item-selected-bg-color;
+            }
+        }
+
+        .menu-title-text {
+            display: inline-block;
+        }
+
+        .menu-submenu-l2 {
+            // 模拟list-style: circle-solid
+            &>.menu-item:before {
+                position: absolute;
+                display: block;
+                content: ' ';
+                left: @menu-submenu-padding-left - 2*@menu-icon-margin-right;
+                top: 50%;
+                margin-top: -@menu-submenu-list-icon-size/2;
+                width: @menu-submenu-list-icon-size;
+                height: @menu-submenu-list-icon-size;
+                border-radius: @menu-submenu-list-icon-size/2;
+                background-color: @base-menu-font-color;
+            }
+        }
+
+        .menu-submenu {
+            .transition();
+            display: block;
+            position: absolute;
+
+
+            &.menu-submenu-hidden {
+                display: none;
+            }
+            &.menu-submenu-l2 {
+                left: @sidebar-folded-width;
+            }
+            &.menu-submenu-l3 {
+                left: @menu-submenu-vertical-width;
+            }
+        }
+    }
+}
