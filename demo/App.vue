@@ -40,160 +40,160 @@ export default {
                 ]
                 },
                 {
-                "title": "审批列表",
+                "title": "testa",
                 "icon": "fa-apple",
                 "children": [
                     {
-                    "title": "待审批",
+                    "title": "testa1",
                     "url": "c1"
                     },
                     {
-                    "title": "已完成",
+                    "title": "testa2",
                     "url": "c2"
                     }
                 ]
                 },
                 {
-                "title": "工单处理",
+                "title": "testb",
                 "icon": " fa-windows",
                 "children": [
                     {
-                    "title": "待处理",
+                    "title": "testb1",
                     "url": "d1"
                     },
                     {
-                    "title": "已完成",
+                    "title": "testb2",
                     "url": "d2"
                     }
                 ]
                 },
                 {
-                "title": "策略迁移",
+                "title": "testc",
                 "icon": " fa-windows",
                 "children": [
                     {
-                    "title": "全部迁移",
+                    "title": "testc1",
                     "url": "e1"
                     },
                     {
-                    "title": "部分迁移",
+                    "title": "testc2",
                     "url": "e2"
                     },
                     {
-                    "title": "策略迁移记录",
+                    "title": "testc3",
                     "url": "e3"
                     }
                 ]
                 },
                 {
-                "title": "安全分析",
+                "title": "testd",
                 "icon": " fa-windows",
                 "children": [
                     {
-                    "title": "概览",
+                    "title": "testd1",
                     "url": "f1"
                     },
                     {
-                    "title": "策略风险分析",
+                    "title": "testd2",
                     "url": "f2"
                     },
                     {
-                    "title": "策略变更",
+                    "title": "testd3",
                     "url": "f3"
                     },
                     {
-                    "title": "策略优化分析",
+                    "title": "testd4",
                     "url": "f4"
                     },
                     {
-                    "title": "安全基线扫描",
+                    "title": "testd5",
                     "url": "f5"
                     },
                     {
-                    "title": "漏洞扫描",
+                    "title": "testd6",
                     "url": "f6"
                     },
                     {
-                    "title": "检测告警",
+                    "title": "testd7",
                     "url": "f7"
                     }
                 ]
                 },
                 {
-                "title": "设备信息",
+                "title": "testf",
                 "icon": " fa-windows",
                 "children": [
                     {
-                    "title": "设备信息预览",
+                    "title": "testf1",
                     "url": "g1"
                     },
                     {
-                    "title": "网络拓扑",
+                    "title": "testf2",
                     "url": "g2"
                     },
                     {
-                    "title": "添加新设备/IDC机房",
+                    "title": "testf3",
                     "url": "g3"
                     }
                 ]
                 },
                 {
-                "title": "系统管理",
+                "title": "testg",
                 "icon": " fa-windows",
                 "children": [
                     {
-                    "title": "用户管理",
+                    "title": "testg1",
                     "children": [
                         {
-                        "title": "账号管理",
+                        "title": "testg11",
                         "url": "h1-1"
                         },
                         {
-                        "title": "角色管理",
+                        "title": "testg12",
                         "url": "h1-2"
                         }
                     ]
                     },
                     {
-                    "title": "日志审计",
+                    "title": "testg2",
                     "children": [
                         {
-                        "title": "登陆日志",
+                        "title": "testg21",
                         "url": "h2-1"
                         },
                         {
-                        "title": "系统操作日志",
+                        "title": "testg22",
                         "url": "h2-2"
                         }
                     ]
                     },
                     {
-                    "title": "系统配置",
+                    "title": "testg3",
                     "children": [
                         {
-                        "title": "系统信息",
+                        "title": "testg31",
                         "url": "h3-1"
                         },
                         {
-                        "title": "授权",
+                        "title": "testg32",
                         "url": "h3-2"
                         },
                         {
-                        "title": "邮箱配置",
+                        "title": "testg33",
                         "url": "h3-3"
                         },
                         {
-                        "title": "存储/备份",
+                        "title": "testg34",
                         "url": "h3-4"
                         },
                         {
-                        "title": "其他",
+                        "title": "35",
                         "url": "h3-5"
                         }
                     ]
                     },
                     {
-                    "title": "系统升级",
+                    "title": "testg4",
                     "url": "h4"
                     }
                 ]
