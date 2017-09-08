@@ -1,76 +1,100 @@
-# navComponent
-navigation
+# bb-nav-menu
+菜单导航组件  for vue.js
 
-###预览方式
+### 预览方式
 ```
 	npm install
-	live-server
+	npm run dev
 ```
+
 ### 规则
 
   > 1. 导航默认全部收起；开放配置初始化默认选中项（TODO）
-  > 2. 全部操作皆由点击触发，非叶子节点只可展开，只有叶子节点能选中
-  > 3. 进入页面时，输入对应的正确的叶子节点的url，可以看到其被选中且层级打开的状态； 错误处理（TODO）
-  > 4. 同级的展开，目前是同时只能有一个。e.g:一级菜单1和一级菜单2都有children节点，菜单1打开的时候，再继续操作打开菜单2，会使菜单1关闭。  开放配置是否允许多子菜单的展开（TODO）
-  > 5. 开放配置使用路由模式还是普通跳转（TODO）
+  > 2. 导航有两种显示状态，皆为竖直，分为折叠和展开两种形态,暂时只支持三层数据的结构。（多层自适应TODO）
+  > 3. 交互形式为：
+    >> 折叠: 第一层hover右侧打开第二层，第二层hover右侧打开第三层</br>
+    >> 展开：第一层click下侧打开第二层，第二层hover右侧展现第三层；</br>
+    >> 叶子节点实现点击触发事件 </br>
+  > 4. 组件不提供路由，但放出相应的响应事件给组件使用方，可自行做前端or服务端路由跳转
 
 ### 使用方式
 
-```html
-  <!-- 确保之前已经引入jquery -->
-  <script type="text/javascript" src="./NavComponent.js"></script> <!--根目录下的文件-->
+```template
+  <bb-nav-menu :menuData="items" :defaultUrl="curUrl" :collapse="collapse" v-on:selectNode="response"></bb-nav-menu>
 ```
+
+### Menu Attribute
+|参数|说明|类型|可选值|默认值|
+|---|---|---|---|---|
+|menuData| 菜单数据，下面有示例 |Array| - | - |
+|defaultUrl|默认选中菜单项的URL|String| - | - |
+|collapse|是否水平折叠收起菜单|Boolean|-|false|
+
+### Menu Events
+|事件名称|说明|回调函数|
+|---|---|---|
+|selectNode| 选中菜单的叶子节点 |url:选中项上面的url参数|
 
 ```JavaScript
-new Nav({
-    container: 'menu', //容器ID名
-    data: data //导航栏数据
-})
+import BbNavMenu from 'bb-nav-menu';
 
-```
-
-```css
-.hide {
-  display:none;
-}
-//样式不限制，可自定义
-```
-
-### 导航栏数据需按照此格式传入(层级不限)
-```Json
-[
-  {
-    "name": "一级菜单1",
-    "key": "a",
-    "children": [
-      {
-        "name": "二级菜单1-1",
-        "key": "a-1",
-        "children": [
+  export default {
+    name: 'app',
+    components: {
+      BbNavMenu
+    },
+    data () {
+      return {
+        collapse: true,
+        curUrl: window.location.pathname || '',
+        items: [
           {
-            "name": "三级菜单1-2-1",
-            "key": "a-2-1"
+            'title': '首页',
+            'icon': 'fa-android',
+            'url': '/'
+          },
+          {
+            'title': '工单处理',
+            'icon': ' fa-windows',
+            'children': [
+              {
+                'title': '待处理',
+                'url': 'd1'
+              },
+              {
+                'title': '已完成',
+                'url': 'd2'
+              }
+            ]
+          },
+          {
+            'title': '策略迁移',
+            'icon': ' fa-windows',
+            'children': [
+              {
+                'title': '全部迁移',
+                'url': 'e1'
+              },
+              {
+                'title': '部分迁移',
+                'url': 'e2'
+              },
+              {
+                'title': '策略迁移记录',
+                'url': 'e3'
+              }
+            ]
           }
-        ]
+        ],
+        url: 'b1'
+      };
+    },
+    methods: {
+      response (params) {
+        console.log('组件里面触发啦', params);
+        router.push({path: params.url});
       }
-    ]
-  },
-  {
-    "name": "一级菜单2",
-    "key": "b",
-    "children": [
-      {
-        "name": "二级菜单2-1",
-        "key": "b-1"
-      },
-      {
-        "name": "二级菜单2-2",
-        "key": "b-2"
-      }
-    ]
-  },
-   {
-    "name": "一级菜单3 ",
-    "key": "c"
-  }
+    }
+  };
+
 ```
