@@ -13,7 +13,7 @@
         <nav class="menu-root">
             <ul class="menu-list" id="menu-folded" v-show="menuCollapse">
               <li v-for="(node,index) in statusTree" class="menu-item menu-item-l1" :key="node.id"
-               :class="(node.isHover?'menu-item-hover ':'') + (node.isSelected?'menu-item-selected':'') + (node.appearUp?'menu-appear-up':'menu-appear-down')" 
+               :class="(node.isHover?'menu-item-hover ':'') + (node.isSelected?'menu-item-selected ':'') + (node.appearUp?'menu-appear-up':'menu-appear-down')" 
                @mouseenter="toggleNode(node.id, 'hover')"
                @mouseleave="toggleNode(node.id, 'hover')" >
                 <a class="menu-title"
